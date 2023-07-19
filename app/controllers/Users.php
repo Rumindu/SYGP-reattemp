@@ -25,7 +25,12 @@
         // Load view
         $this->view('users/v_register', $data);
       }
+    }
+
+      public function login(){
+        $this->view('users/v_login');
+      }
 
         
-    }
+    
   }
