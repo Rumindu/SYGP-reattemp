@@ -1,5 +1,5 @@
 <?php
-  class Announcement {
+  class M_Announcements {
     private $db;
 
     public function __construct(){
