@@ -1,2 +1,14 @@
 @import url('components/topnavbar_styles.css');
 @import url('components/form_styles.css');
+
+/* fonts */
+@font-face {
+  font-family: Poppins-Regular;
+  src: url(fonts/Poppins-Regular.ttf);
+}
+
+body {
+  font-family: Poppins-Regular;
+  font-size: small;
+  text-align: left;
+}
