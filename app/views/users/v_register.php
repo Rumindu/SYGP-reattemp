@@ -4,10 +4,6 @@
 
   <div class="form-container">
     <form action="<?php echo URLROOT;?>/test" method="POST">
-      
-      <div class="form-input-title">Name</div>
-      <input type="text" name="name"  id="name" class="name">
-      <span class="form-invalid"></span>
 
       <div class="form-input-title">Name</div>
       <input type="text" name="name"  id="name" class="name">
@@ -25,6 +21,10 @@
       <input type="password" name="password"  id="password" class="password">
       <span class="form-invalid"></span>
 
+      <div class="form-input-title">Confirm password</div>
+      <input type="password" name="password"  id="password" class="password">
+      <span class="form-invalid"></span>
+      <br><br>
       <button type="submit" class="btn btn-primary">Submit</button>
 
     </form>
