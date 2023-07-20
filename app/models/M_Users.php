@@ -24,7 +24,7 @@
     }
     public function findUserByEmail($email) {
       $this->db->query
-      // ":" represent this is a bind value
+      //we are using prepared statements here (:email)
       ('SELECT * FROM agri_officer WHERE email = :email');
 
       $this->db->bind(':email', $email);
