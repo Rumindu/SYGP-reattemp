@@ -14,15 +14,19 @@
       
       $url = $this->getUrl();
 
-      // Look in controllers for first value
-      //ucwords() - Capitalize the first letter
-      if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php')){
-        // If exists, set as controller
-        $this->currentController = ucwords($url[0]);
-        // Unset 0 Index
-        unset($url[0]);
-      }
+      if(isset($url[0])){
+        // if there isn't this condition "Warning: Trying to access array offset on value of type null in C:\xampp\htdocs\SYGP\app\libraries\Core.php on line 19"
 
+        // Look in controllers for first value
+        //ucwords() - Capitalize the first letter
+      if(file_exists('../app/controllers/' . ucwords($url[0]) . '.php')){
+          // If exists, set as controller
+          $this->currentController = ucwords($url[0]);
+          // Unset 0 Index
+          unset($url[0]);
+        }
+      }
+      
       // Require the controller
       require_once '../app/controllers/' . $this->currentController . '.php';
 
