@@ -176,7 +176,7 @@
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->name;
         print_r ($user);
-        redirect('pages/index');
+        redirect('announcements/index');
       }
 
       public function logout(){
