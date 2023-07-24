@@ -8,3 +8,15 @@
   width: 500px;
   border: 1px solid #d3d3d3;
 }
+
+input[type=text], input[type=password], input[type=email] {
+  border: 1px solid #d5d2d2;
+  border-radius: 5px;
+  width: 95%;
+  height: 25px;
+  padding-top: 10px;
+  padding-left: 13px;
+  padding-right: 15px;
+  margin-right: 10px;
+  display: block;
+}
