@@ -20,8 +20,9 @@
       } else {
         return false;
       }
-      
     }
+
+    // Find user by email
     public function findUserByEmail($email) {
       $this->db->query
       //we are using prepared statements here (:email)
@@ -38,7 +39,8 @@
         return false;
       }
     }
-
+    
+    // Login User  
     public function login($email, $password) {
       $this->db->query('SELECT * FROM agri_officer WHERE email = :email');
       $this->db->bind(':email', $email);

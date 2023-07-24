@@ -1,9 +1,9 @@
 <?php require APPROOT. '/views/inc/header.php'; ?>
 <?php require APPROOT. '/views/inc/topnavbar.php'; ?>
-  <h1>User Sign up</h1>
-
+  
   <div class="form-container">
-    <form action="<?php echo URLROOT;?>/Users/register" method="POST">
+    <center><h1>User Sign up</h1></center>
+    <form action="" method="POST">
 
       <div class="form-input-title">Name</div>
       <input type="text" name="name"  id="name" class="name" value="<?php echo $data['name']?>">
@@ -21,7 +21,7 @@
       <input type="password" name="confirm_password"  id="password" class="password" value="<?php echo $data['confirm_password']?>">
       <span class="form-invalid"><?php echo $data['confirm_password_err'];?></span>
       <br><br>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="form-btn">Submit</button>
 
     </form>
   </div>

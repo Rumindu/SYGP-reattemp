@@ -1,10 +1,11 @@
 <div class="topnav">
   <a href="active" href="#home">Home
   </a>
-  <a href="#news">News
+  <a href="#news">Login
   </a>
-  <a href="#contact">Contact
+  <a href="#contact">Register
   </a>
-  <a href="#about">About
+  <!-- 
+    <a href="#about">Logout -->
   </a>
 </div>

@@ -35,6 +35,7 @@
         }
         else{
           // Check email is already taken
+          //if findUserByEmail in M_Users.php returns true, then email is already taken
           if($this->userModel->findUserByEmail($data['email'])){
             $data['email_err'] = 'Email is already taken';
           }
@@ -60,12 +61,15 @@
 
         // Make sure errors are empty
         if(empty($data['name_err']) && empty($data['email_err']) && empty($data['password_err']) && empty($data['confirm_password_err'])){
-          // Validated
+        // Validation completed
+
           // Hash Password
           $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
           // Register User
           if($this->userModel->register($data)){
+            // Set flash message
+            flash('reg_flash', 'You are registered and can log in');
             redirect('users/login');
           }
           else{
@@ -135,7 +139,6 @@
             $loggedInUser = $this->userModel->login($data['email'], $data['password']);
 
             if($loggedInUser){
-              //redirect('pages/index');
 
               // Create Session
               $this->createUserSession($loggedInUser);
@@ -164,11 +167,15 @@
           $this->view('users/v_login', $data);
         }
       }
+      
 
+      //After login success, create user session
       public function createUserSession($user){
+        // $loggedInUser is equal to the $user. $loggedInUser contains associative array of M_users.php's login functions return value
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->name;
+        print_r ($user);
         redirect('pages/index');
       }
 
