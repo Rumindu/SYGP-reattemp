@@ -8,8 +8,17 @@ echo $_SESSION['user_id'];?></h1>
   <div class="announcement-container">
     <h3><?php echo $announcement->title;?></h3>
     <p><?php echo $announcement->content;?></p>
-    <p><?php echo $announcement->agri_officer_id;?></p>
+    <p><?php echo $announcement->name;?></p>
     <p><?php echo $announcement->published_date_time;?></p>
+    <?php
+    if($_SESSION['user_id'] == $announcement->agri_officer_id){?>
+      <div>
+        <a href="<?php echo URLROOT ."/announcements/edit/".$announcement->announcement_id?>"><button>
+          Edit
+        </button></a>
+      </div>
+    <?php }
+    ?>
     <br><br>
   </div>
 <?php endforeach; ?>
