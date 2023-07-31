@@ -1,6 +1,9 @@
 <?php
   class Announcements extends Controller{
     public function __construct(){
+      if(!isLoggedIn()){
+        redirect('users/login');
+      }
       $this->AnnouncementModel = $this->model('M_Announcements');
     }
 
@@ -103,6 +106,21 @@
         $this->view('announcements/v_edit', $data);
       }
 
+    }
+
+    public function delete($announcement_id){
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if($this->AnnouncementModel->deleteAnnouncement($announcement_id)){
+          redirect('announcements/index');
+        }
+        else {
+          die('Something went wrong.');
+        }
+      }
+      else {
+        echo 'methanata enne';
+        //redirect('announcements/index');
+      }
     }
 
     

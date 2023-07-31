@@ -1,5 +1,5 @@
 <?php
-  date_default_timezone_set('Asia/Kolkata');
+  date_default_timezone_set('Asia/Colombo');
   
   class M_Announcements {
     private $db;
@@ -17,11 +17,13 @@
       a.published_date_time as 'published_date_time',
       ag.name as 'name'
       FROM announcement a
-      INNER JOIN agri_officer ag ON a.agri_officer_id=ag.id");
+      INNER JOIN agri_officer ag ON a.agri_officer_id=ag.id
+      ORDER BY a.published_date_time DESC");
       $results = $this->db->resultSet();
       return $results;
     }
 
+    //to retrieve data to the announcement edit form
     public function getPostId($id){
       $this->db->query("SELECT * FROM announcement WHERE id = :id");
       $this->db->bind(':id', $id);
@@ -49,6 +51,18 @@
       $this->db->bind(':title', $data['title']);
       $this->db->bind(':content', $data['content']);
       $this->db->bind(':published_date_time', date('Y-m-d H:i:s'));
+
+      if($this->db->execute()){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    public function deleteAnnouncement($id){
+      $this->db->query("DELETE FROM announcement WHERE id = :id");
+      $this->db->bind(':id', $id);
 
       if($this->db->execute()){
         return true;

@@ -12,10 +12,15 @@ echo $_SESSION['user_id'];?></h1>
     <p><?php echo $announcement->published_date_time;?></p>
     <?php
     if($_SESSION['user_id'] == $announcement->agri_officer_id){?>
-      <div>
+      <div></div>
         <a href="<?php echo URLROOT ."/announcements/edit/".$announcement->announcement_id?>"><button>
           Edit
         </button></a>
+      </div>
+      <div>
+        <form class="pull-right" action="<?php echo URLROOT ."/announcements/delete/".$announcement->announcement_id?>" method="post">
+        <input type="submit" value="Delete" ">
+        </form>
       </div>
     <?php }
     ?>
