@@ -1,5 +1,6 @@
 <?php require APPROOT. '/views/inc/header.php'; ?>
 <?php require APPROOT. '/views/inc/topnavbar.php'; ?>
+<?php require APPROOT. '/views/inc/sidebar.php'; ?>
   
     <h1>Create an Announcement</h1>
     <div class="announcement-container">

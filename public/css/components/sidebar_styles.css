@@ -1,0 +1,26 @@
+.sidebar {
+  float: left;
+  height: 100vh;
+  width: 180px;
+  background-color: #333333;
+  position: fixed;
+  margin-top: -80px;
+  }
+  
+  .sidebar a {
+  padding: 8px;
+  font-size: 1rem;
+  display: block;
+  text-decoration: none;
+  color: white;
+  }
+  
+  .sidebar a:hover {
+  cursor: pointer;
+  opacity: .7;
+  }
+  
+  /* .body-text {
+  margin-left: 150px;
+  font-size: 18px;
+  } */

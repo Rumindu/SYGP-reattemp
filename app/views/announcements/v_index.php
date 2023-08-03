@@ -1,18 +1,17 @@
 <?php require APPROOT. '/views/inc/header.php'; ?>
 <?php require APPROOT. '/views/inc/topnavbar.php'; ?>
-  
-<h1>Welcome <?php echo $_SESSION['user_name'];
-echo $_SESSION['user_id'];?></h1>
+<?php require APPROOT. '/views/inc/sidebar.php'; ?>
+
 
 <?php foreach($data['announcements'] as $announcement) : ?>
-  <div class="announcement-container">
+  <div class="announcement-container" style="margin-left:280px">
     <h3><?php echo $announcement->title;?></h3>
     <p><?php echo $announcement->content;?></p>
     <p><?php echo $announcement->name;?></p>
     <p><?php echo $announcement->published_date_time;?></p>
     <?php
     if($_SESSION['user_id'] == $announcement->agri_officer_id){?>
-      <div></div>
+      <div>
         <a href="<?php echo URLROOT ."/announcements/edit/".$announcement->announcement_id?>"><button>
           Edit
         </button></a>

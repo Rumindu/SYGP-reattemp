@@ -1,6 +1,7 @@
 @import url('components/topnavbar_styles.css');
 @import url('components/form_styles.css');
 @import url('components/button_styles.css');
+@import url('components/sidebar_styles.css');
 
 /* fonts */
 @font-face {
