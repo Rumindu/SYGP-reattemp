@@ -20,3 +20,28 @@ input[type=text], input[type=password], input[type=email] {
   margin-right: 10px;
   display: block;
 }
+
+.form-invalid{
+  color:  red;
+
+}
+
+.login-logout-main{
+  height: 92.3vh;
+  width: 100vw;
+  background-image:url(../../img/login-bg.webp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.form-container-login-logout{
+  
+  
+  margin-top: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 500px;
+  border: 1px solid #d3d3d3;
+}
