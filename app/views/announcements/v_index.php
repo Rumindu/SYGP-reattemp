@@ -12,13 +12,13 @@
     <?php
     if($_SESSION['user_id'] == $announcement->agri_officer_id){?>
       <div>
-        <a href="<?php echo URLROOT ."/announcements/edit/".$announcement->announcement_id?>"><button>
+        <a href="<?php echo URLROOT ."/announcements/edit/".$announcement->announcement_id?>"><button class="edit-btn">
           Edit
         </button></a>
       </div>
       <div>
-        <form class="pull-right" action="<?php echo URLROOT ."/announcements/delete/".$announcement->announcement_id?>" method="post">
-        <input type="submit" value="Delete" ">
+        <form  action="<?php echo URLROOT ."/announcements/delete/".$announcement->announcement_id?>" method="post">
+          <input class="delete-btn" type="submit" value="Delete" >
         </form>
       </div>
     <?php }

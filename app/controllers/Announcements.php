@@ -97,6 +97,13 @@
 
       else {
         $announcement = $this->AnnouncementModel->getPostId($announcement_id);
+        //print_r($announcement);
+        
+        // check for owner
+        if($announcement->agri_officer_id != $_SESSION['user_id']){
+            redirect("announcements/Index");
+        }
+        else{
         $data = [
           'title' => $announcement->title,
           'content' => $announcement->content,
@@ -104,6 +111,7 @@
           'content_err' => ''
         ];
         $this->view('announcements/v_edit', $data);
+        }
       }
 
     }
@@ -118,8 +126,8 @@
         }
       }
       else {
-        echo 'methanata enne';
-        //redirect('announcements/index');
+       
+        redirect('announcements/index');
       }
     }
 
