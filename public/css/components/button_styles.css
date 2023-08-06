@@ -1,3 +1,5 @@
+
+/* login register form submit button */
 .form-btn{
   background-color: #45df4a;
   color: white;
@@ -13,3 +15,74 @@
   background-color: #3fca3f;
   border-radius: 5px;
 } 
+
+.publish-announcement-btn{
+  cursor: pointer;
+}
+.publish-announcement-btn:hover{
+  border-radius: 10px; 
+}
+
+.delete-btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1.5px solid #8B0000;
+  color: #8B0000;
+  background-color: transparent;
+}
+.delete-btn:hover {
+  background-color: #8B0000;
+  color: #FFFFFF !important;
+}
+
+.edit-btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1.5px solid #185427;
+  color: #185427;
+  background-color: transparent;
+}
+
+.edit-btn:hover {
+  background-color: #185427;
+  color: #FFFFFF !important;
+}
+
+.submit-btn {
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1.5px solid #185427;
+  color: #185427;
+  background-color: transparent;
+}
+.submit-btn:hover {
+  background-color: #185427;
+  color: #FFFFFF !important;
+}
+
+.cancel-btn {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 1.5px solid #8B0000;
+  color: #8B0000;
+  background-color: transparent;
+}
+.cancel-btn:hover {
+  background-color: #8B0000;
+  color: #FFFFFF !important;
+}
+
