@@ -19,9 +19,6 @@
       <button type="submit" class="form-btn">Submit</button>
 
     </form>
-    <div class="msg-flash">
-      <?php flash('reg_flash'); ?>
-    </div>
   </div>
 </main>
 

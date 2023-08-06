@@ -68,8 +68,6 @@
 
           // Register User
           if($this->userModel->register($data)){
-            // Set flash message
-            flash('reg_flash', 'You are registered and can log in');
             redirect('users/login');
           }
           else{
