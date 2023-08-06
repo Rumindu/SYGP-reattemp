@@ -18,12 +18,20 @@ input[type=text], input[type=password], input[type=email] {
   padding-left: 13px;
   padding-right: 15px;
   margin-right: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .form-invalid{
   color:  red;
+}
 
+.form-text-area{
+  width:1454px;
+  font-family: Poppins-Regular;
+  font-size: small;
+  text-align: left;
 }
 
 .login-logout-main{
@@ -33,15 +41,26 @@ input[type=text], input[type=password], input[type=email] {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .form-container-login-logout{
-  
-  
   margin-top: 20px;
   padding: 15px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   width: 500px;
   border: 1px solid #d3d3d3;
+}
+
+.announcement-container{
+  padding:8px 10px 8px 10px ;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)
+  
+}
+
+.body-container{
+  background-color: #f5f5f5;
+  padding:100px 100px 100px 280px;
+  height: 100%;
 }
