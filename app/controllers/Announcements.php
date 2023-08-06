@@ -116,6 +116,21 @@
 
     }
 
+    // public function delete($announcement_id){
+    //   if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    //     if($this->AnnouncementModel->deleteAnnouncement($announcement_id)){
+    //       redirect('announcements/index');
+    //     }
+    //     else {
+    //       die('Something went wrong.');
+    //     }
+    //   }
+    //   else {
+       
+    //     redirect('announcements/index');
+    //   }
+    // }
+
     public function delete($announcement_id){
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($this->AnnouncementModel->deleteAnnouncement($announcement_id)){
@@ -125,12 +140,19 @@
           die('Something went wrong.');
         }
       }
-      else {
-       
-        redirect('announcements/index');
-      }
-    }
 
+      else {
+        $announcement = $this->AnnouncementModel->getPostId($announcement_id);
+        if($announcement->agri_officer_id != $_SESSION['user_id']){
+            redirect("announcements/Index");
+        }
+        else{
+        
+        $this->view('announcements/v_delete_conf');
+        }
+      }
+
+    }
     
   }
   
