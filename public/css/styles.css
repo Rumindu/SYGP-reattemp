@@ -2,6 +2,7 @@
 @import url('components/form_styles.css');
 @import url('components/button_styles.css');
 @import url('components/sidebar_styles.css');
+@import url('components/table_styles.css');
 
 /* fonts */
 @font-face {
@@ -14,4 +15,5 @@ body {
   font-size: small;
   text-align: left;
   margin: 0px;
+  background-color: #f5f5f5;
 }
