@@ -27,8 +27,8 @@
           </div>
         <?php }?>
         <div style="display:flex; justify-content: flex-end;">
-          <p><?php echo $announcement->name;?> - </p>
-          <p><?php echo $announcement->published_date_time;?></p>
+          <h3><?php echo $announcement->name;?> - </h3>
+          <h3><?php echo $announcement->published_date_time;?></h3>
         </div>
     </div>
     <br><br>
