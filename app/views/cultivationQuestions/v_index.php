@@ -12,7 +12,7 @@
     <p><?php echo $cultivationQuestion->content;?></p>
         <div style="display:flex; justify-content:flex-start;">
           <h3><?php echo $cultivationQuestion->name." _";?> </h3>
-          <h4>asked on_</h4><h3><?php echo $cultivationQuestion->asked_date_time;?></h3>
+          <h4>asked on_ </h4><h3><?php echo $cultivationQuestion->asked_date_time;?></h3>
           </div>
         <div class="announcement-container" style="display:flex; justify-content: flex-end;">
         <a href="<?php echo URLROOT ."/CultivationQuestions/detail/".$cultivationQuestion->cultivation_question_id?>">

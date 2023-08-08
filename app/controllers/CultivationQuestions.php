@@ -16,12 +16,13 @@
       $this->view('cultivationQuestions/v_index', $data);
     }
 
-    // public function detail($question_id){
-    //   $CultivationQuestions = $this->CultivationQuestionsModel->getCultivationQuestionResponse($question_id);
-    //   $data = [
-    //     'CultivationQuestion' => $CultivationQuestions
-    //   ];
-    //   print_r($data);
-    //   $this->view('cultivationQuestions/v_detail', $data);
-    // }
+    public function detail($question_id){
+      $CultivationQuestions = $this->CultivationQuestionsModel->getCultivationQuestionResponse($question_id);
+      
+      $data = [
+        'CultivationQuestion' => $CultivationQuestions
+      ];
+      print_r($data);
+      $this->view('cultivationQuestions/v_detail', $data);
+    }
   }
