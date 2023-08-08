@@ -19,6 +19,8 @@
     <br><br>
     <?php break;?>
   <?php endforeach; ?>
+  <a href="<?php echo URLROOT;?>/CultivationQuestionsResponse/add/<?php echo $cultivationQuestion->question_id;?>"><button class="publish-announcement-btn"><h2>Publish announcement</h2></button></a>
+  </div>
 
   <?php foreach($data['CultivationQuestion'] as $cultivationQuestion) : ?>
   <div class="announcement-container">
@@ -32,5 +34,5 @@
     <br><br>
   <?php endforeach; ?>
 
-</div>
+  
 <?php require APPROOT. '/views/inc/footer.php'; ?>

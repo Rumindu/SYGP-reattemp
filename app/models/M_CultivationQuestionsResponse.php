@@ -1,6 +1,6 @@
 <?php
   
-  class M_CultivationQuestions {
+  class M_CultivationQuestionsResponse {
     private $db;
     
 
@@ -8,20 +8,18 @@
       $this->db = new Database;
     }
 
-    public function getCultivationQuestions(){
-      $this->db->query("select
-      a.id AS 'cultivation_question_id',
-      a.producer_id AS 'producer_id',
-      a.title AS 'title',
-      a.content AS 'content',
-      a.image AS 'image',
-      a.asked_date_time AS 'asked_date_time',
-      p.name as 'name'
-      FROM cultivation_question a
-      INNER JOIN producer p ON a.id=p.id
-      ORDER BY a.asked_date_time DESC");
-      $results = $this->db->resultSet();
-      return $results;
+    public function add($data){
+      $this->db->query("INSERT INTO cultivation_question_response (question_id,agri_officer_id, content) VALUES (:question_id, :agri_officer_id, :content)");
+      $this->db->bind(':question_id',$data['question_id']);
+      $this->db->bind(':content', $data['content']);
+      $this->db->bind(':agri_officer_id', $_SESSION['user_id']);
+
+      if($this->db->execute()){
+        return true;
+      }
+      else {
+        return false;
+      }
     }
 
       public function getCultivationQuestionResponse($id){
@@ -51,7 +49,7 @@
         return $results;
     }
 
-    public function getCultivationQuestions0Response($id){
+    public function getCultivationQuestionsFor0Response($id){
       $this->db->query("select
       a.id AS 'cultivation_question_id',
       a.producer_id AS 'producer_id',
@@ -63,11 +61,8 @@
       FROM cultivation_question a
       INNER JOIN producer p ON a.id=p.id
       WHERE a.id=:id");
-      $this->db->bind(':id', $id);
-      $results = $this->db->resultSet();
-      return $results;
+      $row = $this->db->single();
+      return $row;
     }
-
-    
 
   }
