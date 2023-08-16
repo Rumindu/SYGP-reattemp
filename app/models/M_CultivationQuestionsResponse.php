@@ -49,6 +49,7 @@
         return $results;
     }
 
+    //to get data for the view of 0 response
     public function getCultivationQuestionsFor0Response($id){
       $this->db->query("select
       a.id AS 'cultivation_question_id',
@@ -63,6 +64,27 @@
       WHERE a.id=:id");
       $row = $this->db->single();
       return $row;
+    }
+
+     //to retrieve data to the question response edit form
+     public function getCultivationQuestionResponseID($id){
+      $this->db->query("SELECT * FROM cultivation_question_response WHERE id = :id");
+      $this->db->bind(':id', $id);
+      $row = $this->db->single();
+      return $row;
+    }
+
+    public function editCultivationQuestionResponse($data){
+      $this->db->query("UPDATE cultivation_question_response SET content = :content WHERE id = :id");
+      $this->db->bind(':id', $data['questions_response_id']);
+      $this->db->bind(':content', $data['content']);
+      
+      if($this->db->execute()){
+        return true;
+      }
+      else {
+        return false;
+      }
     }
 
   }

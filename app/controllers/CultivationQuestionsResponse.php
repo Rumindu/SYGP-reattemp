@@ -49,5 +49,49 @@
       }
     }
 
+    public function edit($id){
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+        $response = $this->CultivationQuestionsResponseModel->getCultivationQuestionResponseID($id);
+        $data = [
+          'questions_response_id'=>$id,
+          'content' => trim($_POST['content']),
+          'content_err' => '',
+        ];
+
+        if(empty($data['content'])){
+          $data['content_err'] = 'Please enter content.';
+        }
+
+        if(empty($data['content_err']) ){
+          if($this->CultivationQuestionsResponseModel->editCultivationQuestionResponse($data)){
+            $redirecturl='CultivationQuestions/detail/'.$response->question_id;
+            redirect($redirecturl);
+          }
+          else {
+            die('Something went wrong.');
+          }
+        
+        }
+        else{
+        $this->view('cultivationQuestionsResponses/v_edit', $data);
+        }
+      }
+
+      //loading default view. At initially (/cultivationQuestionsResponses/add) load this empty view
+      else {
+        $response = $this->CultivationQuestionsResponseModel->getCultivationQuestionResponseID($id);
+        $data = [
+          'id'=>$id,
+          'content' => $response->content,
+          'content_err' => '',
+          'question_id'=>$response->question_id
+        ];
+        print_r($data);
+        $this->view('cultivationQuestionsResponses/v_edit', $data);
+      }
+    }
+
+
     
   }
