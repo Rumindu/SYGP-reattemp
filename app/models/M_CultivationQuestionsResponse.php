@@ -87,4 +87,16 @@
       }
     }
 
+    public function deleteCultivationQuestionResponse($id){
+      $this->db->query("DELETE FROM cultivation_question_response WHERE id = :id");
+      $this->db->bind(':id', $id);
+
+      if($this->db->execute()){
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
   }

@@ -92,6 +92,34 @@
       }
     }
 
+     public function delete($id){
+      if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $response = $this->CultivationQuestionsResponseModel->getCultivationQuestionResponseID($id);
+        if
+        ($this->CultivationQuestionsResponseModel->deleteCultivationQuestionResponse($id)){
+          // $redirecturl='CultivationQuestions/detail/'.$response->question_id;
+          // redirect($redirecturl);
+          redirect('CultivationQuestions/detail/'.$response->question_id);
+        }
+        else {
+          die('Something went wrong.');
+        }
+      }
+
+      else {
+        $response = $this->CultivationQuestionsResponseModel->getCultivationQuestionResponseID($id);
+        print_r($response);
+        if($response->agri_officer_id != $_SESSION['user_id']){
+            redirect('CultivationQuestions/detail/'.$response->question_id);
+        }
+        else{
+        
+        $this->view('cultivationQuestionsResponses/v_delete_conf');
+        }
+      }
+
+    }
+
 
     
   }
