@@ -5,28 +5,49 @@
     }
 
     public function register(){
+      //geting districts list
+      $district = $this->userModel->getDistricts();
       // Check for POST
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Process form
         // Sanitize POST data
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-
         // entered data
         $data = [
           'name' => trim($_POST['name']),
+          'nic' => trim($_POST['nic']),
+          'address' => trim($_POST['address']),
+          'sdistrict' => trim($_POST['sdistrict']),
+          'phone' => trim($_POST['phone']),
           'email' => trim($_POST['email']),
           'password' => trim($_POST['password']),
           'confirm_password' => trim($_POST['confirm_password']),
+          'user_role' => trim($_POST['user_role']),
 
           'name_err' => '',
+          'nic_err' => '',
+          'address_err' => '',
+          'district_err'=>'',
+          'phone_err' => '',
           'email_err' => '',
           'password_err' => '',
-          'confirm_password_err' => ''
+          'confirm_password_err' => '',
+          'user_role_err' => '',
+          'district' => $district
         ];
         
+       // print_r($data);
         // Validate Name
         if(empty($data['name'])){
           $data['name_err'] = 'Please enter name';
+        }
+
+        if(empty($data['nic'])){
+          $data['nic_err'] = 'Please enter NIC no.';
+        }
+
+        if(empty($data['address'])){
+          $data['address_err'] = 'Please enter address';
         }
 
         // Validate Email
@@ -40,6 +61,18 @@
             $data['email_err'] = 'Email is already taken';
           }
         }
+        if(empty($data['phone'])){
+        $data['phone_err'] = 'Please enter phone';
+        }
+
+        if(empty($data['sdistrict'])){
+          $data['district_err'] = 'Please choose a district';
+        }
+
+        if(empty($data['user_role'])){
+          $data['user_role_err'] = 'Please choose a User Role';
+        }
+
 
         // Validate Password
         if(empty($data['password'])){
@@ -83,14 +116,26 @@
         // Initial data
         $data = [
           'name' => '',
+          'nic' => '',
+          'address' => '',
+          'sdistrict' => '',
+          'phone' => '',
           'email' => '',
           'password' => '',
           'confirm_password' => '',
+          'user_role' => '',
           'name_err' => '',
+          'nic_err' => '',
+          'address_err' => '',
+          'district_err'=>'',
+          'phone_err' => '',
           'email_err' => '',
           'password_err' => '',
-          'confirm_password_err' => ''
+          'confirm_password_err' => '',
+          'user_role_err' => '',
+          'district' => $district
         ];
+        print_r($data);
 
         // Load view
         $this->view('users/v_register', $data);

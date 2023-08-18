@@ -7,11 +7,11 @@
     <center style="font-size:2rem; color:#198a35">User Login</center>
     
     <form action="" method="POST">
-      <div class="form-input-title" style="font-size:1.5rem">Email</div>
+      <div class="form-input-title" style="font-size: medium;">Email</div>
       <input type="email" name="email"  id="email" class="email" value="<?php echo $data['email'];?>">
       <span class="form-invalid"><?php echo $data['email_err'];?></span>
       <br>
-      <div class="form-input-title">password</div>
+      <label for="password" style="font-size: medium;">Password</label>
       <input type="password" name="password"  id="password" class="password" value="<?php echo $data['password'];?>">
       <span class="form-invalid"><?php echo $data['password_err'];?></span>
 
