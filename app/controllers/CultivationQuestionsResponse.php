@@ -4,20 +4,25 @@
       if(!isLoggedIn()){
         redirect('users/login');
       }
+      if($_SESSION['user_role'] != 'Agri Officer'){
+        redirect('Announcements/index');
+      }
       $this->CultivationQuestionsResponseModel = $this->model('M_CultivationQuestionsResponse');
     }
     
     public function add($id){
-      echo $id;
+      if($_SESSION['user_role'] != 'Agri Officer'){
+        redirect('cultivationQuestions/index');
+      }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         
         $data = [
           'question_id'=>$id,
           'content' => trim($_POST['content']),
-          'content_err' => ''
+          'content_err' => '',
         ];
-        print_r($data);
+        //print_r($data);
 
         if(empty($data['content'])){
           $data['content_err'] = 'Please enter content.';
@@ -108,7 +113,6 @@
 
       else {
         $response = $this->CultivationQuestionsResponseModel->getCultivationQuestionResponseID($id);
-        print_r($response);
         if($response->agri_officer_id != $_SESSION['user_id']){
             redirect('CultivationQuestions/detail/'.$response->question_id);
         }
