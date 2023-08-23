@@ -4,7 +4,7 @@
 
   <?php if(isset($_SESSION['user_id'])) : ?>
     <div class=nav-element>
-      <a href="#">Welcome <br> <?php echo $_SESSION['user_name']; ?></a>
+      <a href="#"><?php echo $_SESSION['user_role']; ?> <br> <?php echo $_SESSION['user_name']; ?></a>
       <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Logout</a>
     </div>
   <?php else : ?>
