@@ -1,12 +1,21 @@
 <?php require APPROOT. '/views/inc/header.php'; ?>
 <?php require APPROOT. '/views/inc/topnavbar.php'; ?>
-<?php require APPROOT. '/views/inc/sidebar.php'; ?>
+<?php if($_SESSION['user_role'] == 'Agri Officer'){
+  require APPROOT. '/views/inc/sidebar.php'; 
+  }
+  else{
+    require APPROOT. '/views/inc/sidebar2.php';
+  }?>
+
 
 <div class="body-container">
   <div style="display:flex; justify-content:space-between; align-items: center;" >
     <h1 style="font-size: 2.8em;">Announcements</h1>
+    <?php if($_SESSION['user_role'] == 'agri_officer'){?>
     <a href="<?php echo URLROOT;?>/announcements/add"><button class="publish-announcement-btn"><h2>Publish announcement</h2></button></a>
+    <?php }?>
   </div>
+  
   
   <?php foreach($data['announcements'] as $announcement) : ?>
   <div class="announcement-container">
