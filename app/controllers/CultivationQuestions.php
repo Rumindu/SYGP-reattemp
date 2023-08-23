@@ -97,7 +97,15 @@
           }
       }
 
-      public function category(){
+      public function category($name){
+        $CultivationQuestionCategoryList = $this->CultivationQuestionsModel->getCultivationQuestionCategoryList();
+        $CultivationQuestions = $this->CultivationQuestionsModel->getCultivationQuestionsByCategory($name);
+        $data = [
+          'CultivationQuestion' => $CultivationQuestions,
+          'CultivationQuestionCategoryList' => $CultivationQuestionCategoryList,
+        ];
+        $url="cultivationQuestions/questionCategory/v_".$name;
+        $this->view($url, $data);
         
       }
       

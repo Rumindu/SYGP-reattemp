@@ -88,6 +88,22 @@
       }
     }
 
+    public function getCultivationQuestionsByCategory($name){
+      $this->db->query("select
+      a.id AS 'cultivation_question_id',
+      a.producer_name AS 'producer_name',
+      a.title AS 'title',
+      a.content AS 'content',
+      a.image AS 'image',
+      a.asked_date_time AS 'asked_date_time'
+      FROM cultivation_question a
+      WHERE a.category=:name
+      ORDER BY a.asked_date_time DESC");
+      $this->db->bind(':name', $name);
+      $results = $this->db->resultSet();
+      return $results;
+    }
+
     
 
   }

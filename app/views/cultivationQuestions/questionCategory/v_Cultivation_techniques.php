@@ -11,8 +11,7 @@
   <div style="display:flex; justify-content:space-between; align-items: center;" >
     <h1 style="font-size: 2.8em;">Cultivation Questions</h1>
   </div>
-  <a href="<?php echo URLROOT."/CultivationQuestions/index"?>"></a>
-  <button>all</button>
+  <a href="<?php echo URLROOT."/CultivationQuestions/Index";?>"><button>all</button></a>
   <?php foreach($data['CultivationQuestionCategoryList'] as $category){?>
     <a href="<?php echo URLROOT."/CultivationQuestions/category/". $category->category;?>">
       <button><?php echo (str_replace('_', ' ', $category->category));?></button>
