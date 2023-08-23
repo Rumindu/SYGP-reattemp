@@ -21,7 +21,7 @@
           'phone' => trim($_POST['phone']),
           'email' => trim($_POST['email']),
           'password' => trim($_POST['password']),
-          'confirm_password' => trim($_POST['confirm_password']),
+          'confirm_password' => $_POST['confirm_password'],
           'user_role' => trim($_POST['user_role']),
 
           'name_err' => '',
@@ -36,7 +36,7 @@
           'district' => $district
         ];
         
-       // print_r($data);
+        //print_r($data);
         // Validate Name
         if(empty($data['name'])){
           $data['name_err'] = 'Please enter name';
@@ -135,7 +135,7 @@
           'user_role_err' => '',
           'district' => $district
         ];
-        print_r($data);
+        //print_r($data);
 
         // Load view
         $this->view('users/v_register', $data);
@@ -214,11 +214,13 @@
 
       //After login success, create user session
       public function createUserSession($user){
-        // $loggedInUser is equal to the $user. $loggedInUser contains associative array of M_users.php's login functions return value
+        // $loggedInUser is equal to the $user.. $loggedInUser contains associative array of M_users.php's login functions return value
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_email'] = $user->email;
         $_SESSION['user_name'] = $user->name;
-        print_r ($user);
+        $_SESSION['user_role'] = $user->role;
+        //print_r ($user);
+      
         redirect('announcements/index');
       }
 
@@ -226,19 +228,8 @@
         unset($_SESSION['user_id']);
         unset($_SESSION['user_email']);
         unset($_SESSION['user_name']);
+        unset($_SESSION['user_role']);
         session_destroy();
         redirect('users/login');
       }
-
-      public function isLoggedIn(){
-        if(isset($_SESSION['user_id'])){
-          return true;
-        }
-        else{
-          return false;
-        }
-      }
-
-        
-    
   }
