@@ -1,6 +1,12 @@
 <?php require APPROOT. '/views/inc/header.php'; ?>
 <?php require APPROOT. '/views/inc/topnavbar.php'; ?>
-<?php require APPROOT. '/views/inc/sidebar.php'; ?>
+
+<?php if($_SESSION['user_role']=='Producer'){
+  require APPROOT. '/views/inc/sidebar2.php';
+}
+else{
+ require APPROOT. '/views/inc/sidebar.php';
+}?>
 
 <div class="body-container">
   <div style="display:flex; justify-content:space-between; align-items: center;" >
@@ -19,7 +25,10 @@
     <br><br>
     <?php break;?>
   <?php endforeach; ?>
-  <a href="<?php echo URLROOT;?>/CultivationQuestionsResponse/add/<?php echo $cultivationQuestion->question_id;?>"><button class="publish-announcement-btn"><h2>Add a response</h2></button></a>
+  <?php if($_SESSION['user_role']== 'Agri Officer'){?>
+    <a href="<?php echo URLROOT;?>/CultivationQuestionsResponse/add/<?php echo $cultivationQuestion->question_id;?>"><button class="publish-announcement-btn"><h2>Add a response</h2></button></a>
+  <?php }?>
+  
   </div>
 
   <?php foreach($data['CultivationQuestion'] as $cultivationQuestion) : ?>

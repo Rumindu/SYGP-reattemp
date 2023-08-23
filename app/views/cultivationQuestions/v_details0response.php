@@ -11,7 +11,7 @@
     <h2><?php echo $cultivationQuestion->title;?></h2>
     <p><?php echo $cultivationQuestion->content;?></p>
         <div style="display:flex; justify-content: flex-start;">
-          <h3><?php echo $cultivationQuestion->name;?> - </h3>
+          <h3><?php echo $cultivationQuestion->producer_name;?> - </h3>
           <h3><?php echo $cultivationQuestion->asked_date_time;?></h3>
         </div>
         <div class="announcement-container">

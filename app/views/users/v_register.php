@@ -17,16 +17,18 @@
         <div class="form-input-title">Address</div>
         <input type="text" name="address"  id="address" class="address" value="<?php echo $data['address']?>">
         <span class="form-invalid"><?php echo $data['address_err'];?></span>
-        
-        <label for="district" class="form-input-title">District:</label>
-        <select name="sdistrict" id="district">
-          <option value="">Select District</option>
-        <?php foreach($data['district'] as $district){
-          echo "<option value='".$district->name."'>".$district->name."</option>";
-          }
-        ?>
+        <div>
+
+          <label for="district" class="form-input-title">District:</label>
+          <select name="sdistrict" id="district">
+            <option value="">Select District</option>
+            <?php foreach($data['district'] as $district){
+              echo "<option value='".$district->name."'>".$district->name."</option>";
+            }
+            ?>
         </select>
         <span class="form-invalid"><?php echo $data['district_err'];?></span>
+      </div>
 
         <div class="form-input-title">Email</div>
         <input type="email" name="email"  id="email" class="email" value="<?php echo $data['email']?>">
@@ -48,8 +50,8 @@
         <div class="form-input-title">User Role</div>
         <select name="user_role" id="user_role">
           <option value="">Select User Role</option>
-          <option value="producer">Producer</option>
-          <option value="agri_officer">Agri Officer</option>
+          <option value="Producer">Producer</option>
+          <option value="Agri Officer">Agri Officer</option>
         </select>
         <span class="form-invalid"><?php echo $data['user_role_err'];?></span>
         <br><br>

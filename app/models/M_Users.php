@@ -36,7 +36,7 @@
     public function findUserByEmail($email) {
       $this->db->query
       //we are using prepared statements here (:email)
-      ('SELECT * FROM agri_officer WHERE email = :email');
+      ('SELECT * FROM registered_user WHERE email = :email');
 
       $this->db->bind(':email', $email);
 
@@ -52,12 +52,12 @@
     
     // Login User  
     public function login($email, $password) {
-      $this->db->query('SELECT * FROM agri_officer WHERE email = :email');
+      $this->db->query('SELECT * FROM registered_user WHERE email = :email');
       $this->db->bind(':email', $email);
 
       $row = $this->db->single();
-
-      $hashed_password = $row->password;
+      //print_r($row);
+      $hashed_password = $row->hash_password;
       if (password_verify($password, $hashed_password)) {
         return $row;
       } else {
