@@ -25,6 +25,10 @@
           // Unset 0 Index
           unset($url[0]);
         }
+        else{
+          echo "There is no controller under this name ".$url[0];
+          die();
+        }
       }
       
       // Require the controller
