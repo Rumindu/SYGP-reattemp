@@ -12,7 +12,8 @@
       $CultivationQuestions = $this->CultivationQuestionsModel->getCultivationQuestions();
       $data = [
         'CultivationQuestionCategoryList' => $CultivationQuestionCategoryList,
-        'CultivationQuestion' => $CultivationQuestions
+        'CultivationQuestion' => $CultivationQuestions,
+        'ActiveTab' => 'all',
       ];
       $this->view('cultivationQuestions/v_index', $data);
     }
@@ -103,8 +104,9 @@
         $data = [
           'CultivationQuestion' => $CultivationQuestions,
           'CultivationQuestionCategoryList' => $CultivationQuestionCategoryList,
+          'ActiveTab' => $name,
         ];
-        $url="cultivationQuestions/questionCategory/v_".$name;
+        $url="cultivationQuestions/v_index";
         $this->view($url, $data);
         
       }
