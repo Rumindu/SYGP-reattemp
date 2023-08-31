@@ -11,17 +11,20 @@
   <div style="display:flex; justify-content:space-between; align-items: center;" >
     <h1 style="font-size: 2.8em;">Cultivation Questions</h1>
   </div>
-  <a href="<?php echo URLROOT."/CultivationQuestions/index"?>"></a>
+  <a href="<?php echo URLROOT."/CultivationQuestions/index"?>" style="text-decoration:none">
   <button>all</button>
+  </a>
   <?php foreach($data['CultivationQuestionCategoryList'] as $category){?>
-    <a href="<?php echo URLROOT."/CultivationQuestions/category/". $category->category;?>">
-      <button><?php echo (str_replace('_', ' ', $category->category));?></button>
-    </a>
-  <?php }?>
-  
+    <a href="<?php echo URLROOT."/CultivationQuestions/category/". $category->category;?>" style="text-decoration:none">
+      <button style="margin:10px"><?php echo (str_replace('_', ' ', $category->category));?></button>
+    </a>    
+  <?php };?>
+ 
   <?php if($_SESSION['user_role'] == 'Producer'){?>
-    <a href="<?php echo URLROOT;?>/CultivationQuestions/add"><button class="publish-announcement-btn"><h2>Add cultivation question</h2></button></a>
-    <?php }?>
+    <div style="display: flex; justify-content:end">
+      <a href="<?php echo URLROOT;?>/CultivationQuestions/add"><button class="publish-announcement-btn"><h2>Add cultivation question</h2></button></a>
+    </div>
+  <?php }?>
   <?php foreach($data['CultivationQuestion'] as $cultivationQuestion) : ?>
   <div class="announcement-container">
     <h2><?php echo $cultivationQuestion->title;?></h2>
