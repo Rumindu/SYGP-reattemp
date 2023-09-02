@@ -11,7 +11,8 @@
     public function index(){
       $cultivationDetails = $this->CultivationDetailsModel->getCultivationDetails();
       $data = [
-        'cultivationDetails' => $cultivationDetails
+        'cultivationDetails' => $cultivationDetails,
+        'activeLink' => 'CultivationDetails'
       ];
       //print_r($data);
       $this->view('cultivationDetails/v_index', $data);

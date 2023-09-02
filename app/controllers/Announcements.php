@@ -10,9 +10,9 @@
     public function index(){
       $announcements = $this->AnnouncementModel->getAnnouncements();
       $data = [
-        'announcements' => $announcements
+        'announcements' => $announcements,
+        'activeLink' => 'Announcements'
       ];
-      //print_r($data);
       $this->view('announcements/v_index', $data);
     }
 
@@ -24,7 +24,8 @@
           'title' => trim($_POST['title']),
           'content' => trim($_POST['content']),
           'title_err' => '',
-          'content_err' => ''
+          'content_err' => '',
+          'activeLink' => 'Announcements'
         ];
 
         if(empty($data['title'])){
@@ -55,7 +56,8 @@
           'title' => '',
           'content' => '',
           'title_err' => '',
-          'content_err' => ''
+          'content_err' => '',
+          'activeLink' => 'Announcements'
         ];
         $this->view('announcements/v_add', $data);
       }
@@ -70,7 +72,8 @@
           'title' => trim($_POST['title']),
           'content' => trim($_POST['content']),
           'title_err' => '',
-          'content_err' => ''
+          'content_err' => '',
+          'activeLink' => 'Announcements'
         ];
 
         if(empty($data['title'])){
@@ -108,7 +111,8 @@
           'title' => $announcement->title,
           'content' => $announcement->content,
           'title_err' => '',
-          'content_err' => ''
+          'content_err' => '',
+          'activeLink' => 'Announcements'
         ];
         $this->view('announcements/v_edit', $data);
         }
@@ -147,8 +151,10 @@
             redirect("announcements/Index");
         }
         else{
-        
-        $this->view('announcements/v_delete_conf');
+        $data=[
+          'activeLink' => 'Announcements'
+        ];
+        $this->view('announcements/v_delete_conf', $data);
         }
       }
 

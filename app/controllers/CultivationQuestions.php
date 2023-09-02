@@ -14,6 +14,7 @@
         'CultivationQuestionCategoryList' => $CultivationQuestionCategoryList,
         'CultivationQuestion' => $CultivationQuestions,
         'ActiveTab' => 'all',
+        'activeLink' => 'CultivationQuestions'
       ];
       $this->view('cultivationQuestions/v_index', $data);
     }
@@ -25,14 +26,16 @@
       
       if (!empty($CultivationQuestions)) {
         $data = [
-        'CultivationQuestion' => $CultivationQuestions
+        'CultivationQuestion' => $CultivationQuestions,
+        'activeLink' => 'CultivationQuestions'
         ];
         $this->view('cultivationQuestions/v_detail', $data);
       }
       else{
         $CultivationQuestions = $this->CultivationQuestionsModel->getCultivationQuestions0Response($question_id);
         $data = [
-          'CultivationQuestion' => $CultivationQuestions
+          'CultivationQuestion' => $CultivationQuestions,
+          'activeLink' => 'CultivationQuestions'
           ];
         
         $this->view('cultivationQuestions/v_details0response', $data);
@@ -55,7 +58,8 @@
               'content_err' => '',
               'category' => $category,
               'scategory' => trim($_POST['scategory']),
-              'scategory_err' => ''
+              'scategory_err' => '',
+              'activeLink' => 'CultivationQuestions'
             ];
     
             if(empty($data['title'])){
@@ -91,7 +95,8 @@
               'content_err' => '',
               'category' => $category,
               'scategory' => '',  
-              'scategory_err' => ''
+              'scategory_err' => '',
+              'activeLink' => 'CultivationQuestions'
             ];
             //print_r($data);
             $this->view('cultivationQuestions/v_add', $data,);
@@ -105,6 +110,7 @@
           'CultivationQuestion' => $CultivationQuestions,
           'CultivationQuestionCategoryList' => $CultivationQuestionCategoryList,
           'ActiveTab' => $name,
+          'activeLink' => 'CultivationQuestions'
         ];
         $url="cultivationQuestions/v_index";
         $this->view($url, $data);

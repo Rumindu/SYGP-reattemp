@@ -21,6 +21,7 @@
           'question_id'=>$id,
           'content' => trim($_POST['content']),
           'content_err' => '',
+          'activeLink' => 'CultivationQuestions'
         ];
         //print_r($data);
 
@@ -48,7 +49,8 @@
       else {
         $data = [
           'content' => '',
-          'content_err' => ''
+          'content_err' => '',
+          'activeLink' => 'CultivationQuestions'
         ];
         $this->view('cultivationQuestionsResponses/v_add', $data);
       }
@@ -62,6 +64,7 @@
           'questions_response_id'=>$id,
           'content' => trim($_POST['content']),
           'content_err' => '',
+          'activeLink' => 'CultivationQuestions',
         ];
 
         if(empty($data['content'])){
@@ -90,7 +93,8 @@
           'id'=>$id,
           'content' => $response->content,
           'content_err' => '',
-          'question_id'=>$response->question_id
+          'question_id'=>$response->question_id,
+          'activeLink' => 'CultivationQuestions'
         ];
         print_r($data);
         $this->view('cultivationQuestionsResponses/v_edit', $data);
