@@ -19,7 +19,9 @@
     <br><br>
   <?php endforeach; ?>
   <h1>There is no Responses</h1>
-  <a href="<?php echo URLROOT;?>/CultivationQuestionsResponse/add/<?php echo $cultivationQuestion->cultivation_question_id;?>"><button class="publish-announcement-btn"><h2>Add a response</h2></button></a>
+  <?php if($_SESSION['user_role']== 'Agri Officer'){?>
+    <a href="<?php echo URLROOT;?>/CultivationQuestionsResponse/add/<?php echo $cultivationQuestion->question_id;?>"><button class="publish-announcement-btn"><h2>Add a response</h2></button></a>
+  <?php }?>
   </div>
 
   
