@@ -1,5 +1,5 @@
 <div class="sidebar">
 <img src="<?php echo URLROOT."/public/img/navbar-logo-large.webp";?>" alt="logo" height="72px">
-  <a href="<?php echo URLROOT; ?>/Announcements/Index">Announcements</a>
-  <a href="<?php echo URLROOT; ?>/CultivationQuestions/Index">Cultivation question</a>
+  <a href="<?php echo URLROOT; ?>/Announcements/Index" <?php if($data['activeLink']=='Announcements'){?>style="background:red;"<?php };?>>Announcements</a>
+  <a href="<?php echo URLROOT; ?>/CultivationQuestions/Index" <?php if($data['activeLink']=='CultivationQuestions'){?>style="background:red;"<?php };?>>Cultivation question</a>
 </div>
