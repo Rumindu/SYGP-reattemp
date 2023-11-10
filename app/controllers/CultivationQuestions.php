@@ -112,10 +112,14 @@
           'ActiveTab' => $name,
           'activeLink' => 'CultivationQuestions'
         ];
-        $url="cultivationQuestions/v_index";
-        $this->view($url, $data);
-        
-      }
+        //viewing empty page when there is no content of CultivationQuestions
+        if(empty($data['CultivationQuestion'])){
+          $this->view('cultivationQuestions/v_0index', $data);
+        }
+        else{
+          $this->view('cultivationQuestions/v_index', $data);
+        }
+       }
       
 
     
