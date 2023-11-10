@@ -11,7 +11,7 @@
 <div class="body-container">
   <div style="display:flex; justify-content:space-between; align-items: center;" >
     <h1 style="font-size: 2.8em;">Announcements</h1>
-    <?php if($_SESSION['user_role'] == 'agri_officer'){?>
+    <?php if($_SESSION['user_role'] == 'Agri Officer'){?>
     <a href="<?php echo URLROOT;?>/announcements/add"><button class="publish-announcement-btn"><h2>Publish announcement</h2></button></a>
     <?php }?>
   </div>
