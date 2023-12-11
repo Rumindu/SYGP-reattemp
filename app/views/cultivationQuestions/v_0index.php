@@ -18,7 +18,7 @@
     <?php //print_r($data['CultivationQuestion']);?>
     <a href="<?php echo URLROOT."/CultivationQuestions/index"?>" style="text-decoration:none">
       <button <?php
-      if($data['ActiveTab']=='all'){?>class="submit-btn"<?php } else{?>class="cancel-btn"<?php };?>>all</button>
+      if($data['ActiveTab']=='all'){?>class="submit-btn"<?php } else{?>class="cancel-btn"<?php };?>>All</button>
     </a>
     <?php foreach($data['CultivationQuestionCategoryList'] as $category){?>
     <a href="<?php echo URLROOT."/CultivationQuestions/category/". $category->category;?>" style="text-decoration:none">
@@ -27,7 +27,6 @@
     </a>    
     <?php };?>
   </div>
- 
-  <div>Nothing to Display</div>
+  <h1>Nothing to Display</h1>
 </div>
 <?php require APPROOT. '/views/inc/footer.php'; ?>

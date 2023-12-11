@@ -18,12 +18,12 @@
     <?php //print_r($data['CultivationQuestion']);?>
     <a href="<?php echo URLROOT."/CultivationQuestions/index"?>" style="text-decoration:none">
       <button <?php
-      if($data['ActiveTab']=='all'){?>class="submit-btn"<?php } else{?>class="cancel-btn"<?php };?>>all</button>
+      if($data['ActiveTab']=='all'){?>class="tab-btn-active-tab"<?php } else{?>class="tab-btn"<?php };?>>All</button>
     </a>
     <?php foreach($data['CultivationQuestionCategoryList'] as $category){?>
     <a href="<?php echo URLROOT."/CultivationQuestions/category/". $category->category;?>" style="text-decoration:none">
       <button <?php 
-      if($data['ActiveTab']==$category->category){?>class="submit-btn"<?php } else{?>class="cancel-btn"<?php };?>><?php echo (str_replace('_', ' ', $category->category));?></button>
+      if($data['ActiveTab']==$category->category){?>class="tab-btn-active-tab"<?php } else{?>class="tab-btn"<?php };?>><?php echo (str_replace('_', ' ', $category->category));?></button>
     </a>    
     <?php };?>
   </div>
