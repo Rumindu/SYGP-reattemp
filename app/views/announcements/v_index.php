@@ -17,7 +17,7 @@
   </div>
   
   
-  <?php foreach($data['announcements'] as $announcement) : ?>
+  <?php foreach($data['announcements'] as $announcement) : //here ':' for indicate starting of the foreach loop body ?>
   <div class="announcement-container">
     <h2><?php echo $announcement->title;?></h2>
     <p><?php echo $announcement->content;?></p>
@@ -41,6 +41,6 @@
         </div>
     </div>
     <br><br>
-  <?php endforeach; ?>
+  <?php endforeach;//end of foreach loop. We can use '{}' instead of ':' and 'endforeach' ?>
 </div>
 <?php require APPROOT. '/views/inc/footer.php'; ?>
