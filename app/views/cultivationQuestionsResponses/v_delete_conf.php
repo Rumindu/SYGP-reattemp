@@ -11,7 +11,7 @@
       <form action="" method="post">
         <input type="submit" value="Ok" class="delete-btn">
       </form>
-      <a href="<?php echo URLROOT ?>/CultivationQuestions/Index"><button class="submit-btn">Cancel</button></a>
+      <a href="<?php echo URLROOT ?>/CultivationQuestions/detail/<?php echo $data['id']; ?>"><button class="submit-btn">Cancel</button></a>
     </div>
   </div>
 </div>
