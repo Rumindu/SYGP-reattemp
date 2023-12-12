@@ -121,8 +121,11 @@
             redirect('CultivationQuestions/detail/'.$response->question_id);
         }
         else{
-        
-        $this->view('cultivationQuestionsResponses/v_delete_conf');
+        $data=[
+          'id'=>$response->question_id,
+          'activeLink' => 'CultivationQuestions'
+        ];
+        $this->view('cultivationQuestionsResponses/v_delete_conf',$data);
         }
       }
 
