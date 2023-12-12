@@ -9,7 +9,7 @@
     </div>
   <?php else : ?>
     <div class=nav-element>
-      <a class="nav-link" href="<?php echo URLROOT; ?>/users/register">Register</a>
+      <a class="nav-link" href="<?php echo URLROOT; ?>/users/login">Login</a>
     </div>
   <?php endif; ?>    
 
