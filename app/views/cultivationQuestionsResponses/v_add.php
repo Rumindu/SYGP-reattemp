@@ -7,7 +7,7 @@
     <div class="announcement-container">
       <form action="" method="post">
         <label for="content"><h2 style="margin:0px">Content</h3></label>
-        <textarea name="content" id="content" placeholder="Enter the announcement content" cols="30" rows="10" class="form-text-area"></textarea>
+        <textarea name="content" id="content" placeholder="Enter the announcement content" class="form-text-area"></textarea>
         <span class="form-invalid"><?php echo $data['content_err'];?>
         </span>
         <br><br>

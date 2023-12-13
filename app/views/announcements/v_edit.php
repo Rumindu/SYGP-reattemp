@@ -12,7 +12,7 @@
         <span class="form-invalid"><?php echo $data['title_err'];?></span>
         <br>
         <label for="content"><h2 style="margin:0px">Content</h3></label>
-        <textarea name="content" id="content" cols="30" rows="10" class="form-text-area">
+        <textarea name="content" id="content" class="form-text-area" rows=10>
           <?php echo $data['content'];?> 
         </textarea>
         <span class="form-invalid"><?php echo $data['content_err'];?></span>

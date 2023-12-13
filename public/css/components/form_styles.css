@@ -28,7 +28,7 @@ input[type=text], input[type=password], input[type=email] {
 }
 
 .form-text-area{
-  width:1454px;
+  width:100%;
   font-family: Poppins-Regular;
   font-size: small;
   text-align: left;
