@@ -19,12 +19,12 @@
         <br>
         <br>
       <label for="title"><h2 style="margin:0px">Title</h3></label>
-        <input id="title" type="text" name="title" placeholder="Enter the announcement title" value="<?php echo $data['title'];?>">
+        <input id="title" type="text" name="title" placeholder="Enter the question title" value="<?php echo $data['title'];?>">
         <span class="form-invalid"><?php echo $data['title_err'];?>
         </span>
         <br>
         <label for="content"><h2 style="margin:0px">Content</h3></label>
-        <textarea name="content" id="content" placeholder="Enter the announcement content" class="form-text-area" rows=10></textarea>
+        <textarea name="content" id="content" placeholder="Enter the question content" class="form-text-area" rows=10></textarea>
         <span class="form-invalid"><?php echo $data['content_err'];?>
         </span>
         <br><br>

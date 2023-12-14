@@ -96,7 +96,6 @@
           'question_id'=>$response->question_id,
           'activeLink' => 'CultivationQuestions'
         ];
-        print_r($data);
         $this->view('cultivationQuestionsResponses/v_edit', $data);
       }
     }

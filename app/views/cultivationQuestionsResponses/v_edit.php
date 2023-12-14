@@ -4,9 +4,9 @@
   
   <div class="body-container" style="height: 100vh;"> 
     <div class="announcement-container">
-      <h1 style="text-align:center">Edit an Announcement</h1>
+      <h1 style="text-align:center">Edit Response</h1>
       <form action="" method="post">
-        <label for="content"><h2 style="margin:0px">Content</h3></label>
+        <label for="content"><h2 style="margin:0px">Response</h3></label>
         <textarea name="content" id="content" class="form-text-area" rows=10>
           <?php echo $data['content'];?> 
         </textarea>

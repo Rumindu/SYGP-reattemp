@@ -69,7 +69,7 @@
               $data['content_err'] = 'Please enter content.';
             }
             if(empty($data['scategory'])){
-              $data['scategory_err'] = 'Please choose a content.';
+              $data['scategory_err'] = 'Please choose a category.';
             }
             if(empty($data['title_err']) && empty($data['content_err']) && empty($data['scategory_err'])){
               if($this->CultivationQuestionsModel->add($data)){
