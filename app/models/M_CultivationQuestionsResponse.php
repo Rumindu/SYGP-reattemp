@@ -29,7 +29,7 @@
         a.agri_officer_id as 'agri_officer_id',
         a.responded_date_time as 'responded_date_time',
         a.content as 'content',
-        ag.name as 'agri_officer_name',
+        ru.name as 'agri_officer_name',
         b.producer_id as 'producer_id',
         b.title as 'quesion_title',
         b.content as 'quesion_content',
@@ -38,8 +38,8 @@
         FROM cultivation_question_response a
         INNER JOIN cultivation_question b 
         ON a.question_id=b.id
-        INNER JOIN agri_officer ag
-        ON a.agri_officer_id=ag.id
+        INNER JOIN registered_user ru
+        ON a.agri_officer_id=ru.id
         INNER JOIN producer pr
         ON b.producer_id=pr.id
         WHERE a.question_id = :id
@@ -58,9 +58,9 @@
       a.content AS 'content',
       a.image AS 'image',
       a.asked_date_time AS 'asked_date_time',
-      p.name as 'name'
+      ru.name as 'name'
       FROM cultivation_question a
-      INNER JOIN producer p ON a.id=p.id
+      INNER JOIN registered_user ru ON a.id=p.id
       WHERE a.id=:id");
       $row = $this->db->single();
       return $row;

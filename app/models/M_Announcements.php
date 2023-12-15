@@ -17,7 +17,7 @@
       a.published_date_time as 'published_date_time',
       ag.name as 'name'
       FROM announcement a
-      INNER JOIN agri_officer ag ON a.agri_officer_id=ag.id
+      INNER JOIN registered_user ag ON a.agri_officer_id=ag.id
       ORDER BY a.published_date_time DESC");
       $results = $this->db->resultSet();
       return $results;
